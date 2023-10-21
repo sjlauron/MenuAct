@@ -83,7 +83,7 @@
     function update_data($menu_name, $menu_desc, $id)
     {
         $db = conn_db();
-        $sql = "UPDATE ref_menu SET menu_name=?, menu_desc=?, price=? WHERE id=?";
+        $sql = "UPDATE ref_menu SET menu_name=?, menu_desc=? WHERE id=?";
         $st = $db->prepare($sql);
         if ($st->execute([$menu_name, $menu_desc, $id])) {
             // Success - Display SweetAlert
@@ -144,7 +144,7 @@
     }
 
     // Search
-    /* function search_data($id)
+    function search_data($id)
     {
         $db = conn_db();
         $sql = "SELECT * FROM ref_menu WHERE id=?";
@@ -153,5 +153,5 @@
         $row = $st->fetch(PDO::FETCH_ASSOC);
         $db = null;
         return $row ?: [];
-    } */
+    }
 ?>
